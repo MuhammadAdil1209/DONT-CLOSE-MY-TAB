@@ -2,6 +2,9 @@
 
 If you are a GitHub codespaces user, you might've found yourself closing the tab entirely instead of closing open files. Annoying ikr. It's a developer instict to do that. I found that annoying too, and apparently there was no smooth and easy solution out there, so this small chrome/edge/arc extension will do it.
 
+![image](https://github.com/user-attachments/assets/c88d91a5-5b99-4d3e-bd87-c71e45c46369)
+
+
 ## Installation
 
 Since I haven't published this in Chrome Web Store, you will have to manually install it:
