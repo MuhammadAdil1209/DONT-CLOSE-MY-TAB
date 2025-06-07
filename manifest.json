@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "DON'T CLOSE MY TAB",
+  "version": "1.1",
+  "description": "Prevents accidental tab closure with Ctrl+W by showing a confirmation dialog",
+  "permissions": ["activeTab", "storage"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "DON'T CLOSE MY TAB Settings"
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["icon.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

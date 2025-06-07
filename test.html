@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Page - DON'T CLOSE MY TAB Extension</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        min-height: 100vh;
+      }
+      .container {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .test-section {
+        margin: 20px 0;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+      }
+      button {
+        background: #4caf50;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 10px;
+      }
+      button:hover {
+        background: #45a049;
+      }
+      .warning {
+        background: #ff6b6b;
+        color: white;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 20px 0;
+        text-align: center;
+        font-weight: bold;
+      }
+      .success {
+        background: #4caf50;
+        color: white;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 20px 0;
+        text-align: center;
+        font-weight: bold;
+      }
+      .instructions {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 20px;
+        border-radius: 8px;
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>💢 DON'T CLOSE MY TAB - Test Page</h1>
+
+      <div class="success">Extension is loaded and protecting this tab!</div>
+
+      <div class="instructions">
+        <h3>How to test the extension:</h3>
+        <ol>
+          <li>
+            <strong>Click anywhere on this page first</strong> (required for
+            beforeunload to work)
+          </li>
+          <li>
+            Try pressing <kbd>Ctrl+W</kbd> (Windows/Linux) or
+            <kbd>Cmd+W</kbd> (Mac)
+          </li>
+          <li>You should see a confirmation dialog</li>
+          <li>Try closing the tab using the X button</li>
+          <li>Check the browser console (F12) for debug messages</li>
+        </ol>
+      </div>
+
+      <div class="test-section">
+        <h3>Test Buttons</h3>
+        <button onclick="testWindowClose()">Test window.close()</button>
+        <button onclick="testNavigation()">Test Navigation Away</button>
+        <button onclick="openConsole()">Open Console (F12)</button>
+      </div>
+
+      <div class="test-section">
+        <h3>Extension Status</h3>
+        <p>
+          Click the extension icon in your browser toolbar to toggle settings.
+        </p>
+        <div id="extension-status">
+          <p>✅ Extension should be active</p>
+          <p>✅ Content script should be loaded</p>
+          <p>✅ Protection should engage after you interact with the page</p>
+        </div>
+      </div>
+      <div class="warning">
+        ⚠️ Try pressing Ctrl+W now to test the protection!<br />
+        <small>Each tab should work independently</small>
+      </div>
+
+      <div class="test-section">
+        <h3>Multi-Tab Test</h3>
+        <button onclick="openNewTab()">Open New Tab (Test)</button>
+        <button onclick="openMultipleTabs()">Open 3 Test Tabs</button>
+        <p><small>Each tab should have independent protection</small></p>
+      </div>
+
+      <div class="test-section">
+        <h3>Debug Information</h3>
+        <p>
+          Check the browser console for messages starting with "Don't Close My
+          Tab:"
+        </p>
+        <p>Extension version: 1.1</p>
+        <p>Page loaded at: <span id="load-time"></span></p>
+      </div>
+    </div>
+
+    <script>
+      // Show load time
+      document.getElementById("load-time").textContent =
+        new Date().toLocaleTimeString();
+
+      // Test functions
+      function testWindowClose() {
+        console.log("Testing window.close()");
+        window.close();
+      }
+
+      function testNavigation() {
+        if (confirm("This will navigate away from the page. Continue?")) {
+          window.location.href = "https://google.com";
+        }
+      }
+
+      function openConsole() {
+        alert("Press F12 to open the browser console and see debug messages!");
+      }
+      function openNewTab() {
+        window.open(window.location.href, "_blank");
+      }
+
+      function openMultipleTabs() {
+        for (let i = 0; i < 3; i++) {
+          setTimeout(() => {
+            window.open(window.location.href, "_blank");
+          }, i * 500);
+        }
+      }
+
+      // Add some interaction to trigger the extension
+      document.addEventListener("click", function () {
+        console.log("User clicked - extension protection should now be active");
+      });
+
+      // Log that the test page is ready
+      console.log(
+        "Test page loaded - DON'T CLOSE MY TAB extension should be active"
+      );
+      console.log("Try pressing Ctrl+W to test the extension!");
+    </script>
+  </body>
+</html>
