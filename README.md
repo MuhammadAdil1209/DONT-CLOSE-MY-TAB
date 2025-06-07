@@ -1,31 +1,31 @@
 # DON'T CLOSE MY TAB Extension - Installation & Testing Guide
 
-## 🚀 How to Install and Test
+## Installation
 
-### Step 1: Install the Extension
+Since I haven't published this in Chrome Web Store, you will have to manually install it:
 
 1. Open Chrome and go to `chrome://extensions/`
 2. Enable "Developer mode" (toggle in top-right corner)
 3. Click "Load unpacked"
-4. Select this folder: `c:\Users\BIT\Documents\github\DONT-CLOSE-MY-TAB`
+4. Select this repo folder after cloning
 5. The extension should now appear in your extensions list
 
-### Step 2: Test the Extension
+## Usage
 
-1. Open the test page: `test.html` (in this folder)
+1. Open any web page or the test page: `test.html` (in this folder)
 2. **IMPORTANT**: Click anywhere on the page first (required for browser security)
 3. Try pressing `Ctrl+W` - you should see a confirmation dialog
 4. Try closing the tab with the X button - you should see another confirmation
 5. Check the browser console (F12) for debug messages
 
-### Step 3: Configure Settings
+## Configuration
 
 1. Click the extension icon in your browser toolbar
 2. Toggle protection on/off
 3. Enable/disable confirmation dialogs
 4. The status indicator will show if protection is active
 
-## 🔧 What's Fixed
+## What's Fixed
 
 ### Major Improvements:
 
@@ -45,22 +45,7 @@
 - Tracks user interaction to comply with browser security policies
 - Provides comprehensive logging for debugging
 
-## 🧪 Testing Scenarios
-
-1. **Basic Test**: Press `Ctrl+W` after clicking on the page
-2. **Tab Close**: Click the X button on the tab
-3. **Window Close**: Use the test button on the test page
-4. **Settings**: Toggle extension on/off via popup
-5. **Console**: Check for "DON'T CLOSE MY TAB:" messages in F12 console
-
-## ⚠️ Important Notes
-
-- **User interaction required**: You must click/interact with the page first
-- **Browser limitations**: Some browser shortcuts cannot be completely blocked
-- **Website compatibility**: Works on all regular websites (not on chrome:// pages)
-- **Confirmation dialogs**: Uses browser's built-in confirmation for security
-
-## 🐛 Troubleshooting
+## Troubleshooting
 
 If the extension doesn't work:
 
@@ -70,4 +55,4 @@ If the extension doesn't work:
 4. **Verify permissions** - extension should have "storage" and "activeTab"
 5. **Test on different websites** - some sites may interfere
 
-The extension should now work reliably! 🎉
+The extension should now work reliably!
