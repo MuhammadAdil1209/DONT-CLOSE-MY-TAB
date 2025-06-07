@@ -1,10 +1,12 @@
-# DON'T CLOSE MY TAB Extension - Installation & Testing Guide
+# DON'T CLOSE MY TAB
+
+If you are a GitHub codespaces user, you might've found yourself closing the tab entirely instead of closing open files. Annoying ikr. It's a developer instict to do that. I found that annoying too, and apparently there was no smooth and easy solution out there, so this small chrome/edge/arc extension will do it.
 
 ## Installation
 
 Since I haven't published this in Chrome Web Store, you will have to manually install it:
 
-1. Open Chrome and go to `chrome://extensions/`
+1. Open Chrome/Edge/Arc and go to `chrome://extensions/`
 2. Enable "Developer mode" (toggle in top-right corner)
 3. Click "Load unpacked"
 4. Select this repo folder after cloning
